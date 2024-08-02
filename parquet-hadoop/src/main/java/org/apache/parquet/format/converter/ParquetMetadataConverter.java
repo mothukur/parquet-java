@@ -558,7 +558,7 @@ public class ParquetMetadataConverter {
           columnMetaData.getTotalSize(),
           columnMetaData.getFirstDataPageOffset());
       if ((columnMetaData.getEncodingStats() != null
-           && columnMetaData.getEncodingStats().hasDictionaryPages())
+              && columnMetaData.getEncodingStats().hasDictionaryPages())
           || columnMetaData.hasDictionaryPage()) {
         metaData.setDictionary_page_offset(columnMetaData.getDictionaryPageOffset());
       }
