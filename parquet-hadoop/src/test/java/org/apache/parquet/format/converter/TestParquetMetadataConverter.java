@@ -206,13 +206,13 @@ public class TestParquetMetadataConverter {
   @Test
   public void testParquetMetadataConverterWithDictionary() throws IOException {
     ParquetMetadata parquetMetaData = createParquetMetaData(Encoding.PLAIN_DICTIONARY, Encoding.PLAIN);
-    testParquetMetadataConverterWithDictionary(parquetMetaData)
+    testParquetMetadataConverterWithDictionary(parquetMetaData);
   }
 
   @Test
   public void testParquetMetadataConverterWithDictionaryAndWithoutEncodingStats() throws IOException {
     ParquetMetadata parquetMetaData = createParquetMetaData(Encoding.PLAIN_DICTIONARY, Encoding.PLAIN, false);
-    testParquetMetadataConverterWithDictionary(parquetMetaData)
+    testParquetMetadataConverterWithDictionary(parquetMetaData);
   }
   
   private void testParquetMetadataConverterWithDictionary(ParquetMetadata parquetMetaData) throws IOException {
