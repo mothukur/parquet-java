@@ -214,7 +214,7 @@ public class TestParquetMetadataConverter {
     ParquetMetadata parquetMetaData = createParquetMetaData(Encoding.PLAIN_DICTIONARY, Encoding.PLAIN, false);
     testParquetMetadataConverterWithDictionary(parquetMetaData);
   }
-  
+
   private void testParquetMetadataConverterWithDictionary(ParquetMetadata parquetMetaData) throws IOException {
     ParquetMetadataConverter converter = new ParquetMetadataConverter();
     FileMetaData fmd1 = converter.toParquetMetadata(1, parquetMetaData);
@@ -1294,8 +1294,9 @@ public class TestParquetMetadataConverter {
   private static ParquetMetadata createParquetMetaData(Encoding dicEncoding, Encoding dataEncoding) {
     return createParquetMetaData(dicEncoding, dataEncoding, true);
   }
-  
-  private static ParquetMetadata createParquetMetaData(Encoding dicEncoding, Encoding dataEncoding, boolean includeEncodingStats) {
+
+  private static ParquetMetadata createParquetMetaData(
+      Encoding dicEncoding, Encoding dataEncoding, boolean includeEncodingStats) {
     MessageType schema = parseMessageType("message schema { optional int32 col (INT_32); }");
     org.apache.parquet.hadoop.metadata.FileMetaData fileMetaData =
         new org.apache.parquet.hadoop.metadata.FileMetaData(schema, new HashMap<String, String>(), null);
