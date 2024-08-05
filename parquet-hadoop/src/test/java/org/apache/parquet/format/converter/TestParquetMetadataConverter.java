@@ -1312,6 +1312,10 @@ public class TestParquetMetadataConverter {
       es = builder.build();
     }
     Set<org.apache.parquet.column.Encoding> e = new HashSet<org.apache.parquet.column.Encoding>();
+    if (dicEncoding != null) {
+      e.add(dicEncoding);
+    }
+    e.add(dataEncoding);
     PrimitiveTypeName t = PrimitiveTypeName.INT32;
     ColumnPath p = ColumnPath.get("col");
     CompressionCodecName c = CompressionCodecName.UNCOMPRESSED;
